@@ -42,7 +42,7 @@ rows = sql_query.data.rows
 cols = sql_query.data.columns
 
 if rows.any?
-  table = Terminal::Table.new rows: rows, headings: cols
+  table = DB::Table.new rows: rows, headings: cols
   puts table
 else
   puts []

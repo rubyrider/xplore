@@ -37,7 +37,7 @@ module RailsDb
     def truncate
       RailsDb::Database.truncate(name)
     end
-
+  
     def primary_key
       RailsDb::Database.primary_key(name)
     end
