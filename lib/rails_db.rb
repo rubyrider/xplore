@@ -6,6 +6,8 @@ require 'simple_form'
 require 'ransack'
 require 'kaminari'
 
+Object.send(:remove_const, :Terminal) if Object.constants.include?(:Terminal)
+
 module RailsDb
   # Custom require relative that work with older rubies also
   # def self.require_relative(path)
