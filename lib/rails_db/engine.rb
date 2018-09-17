@@ -15,4 +15,4 @@ module RailsDb
   end
 end
 
-Xplore::Engine = RailsDb::Xplore
+Xplore::Engine = RailsDb::Engine
