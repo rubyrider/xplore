@@ -1,19 +1,10 @@
-# Rails DB
-
-Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact me by email: `igorkasyanchuk[@]gmail.com`.
-
-[![Build Status](https://travis-ci.org/igorkasyanchuk/rails_db.svg)](https://travis-ci.org/igorkasyanchuk/rails_db)
-[![Gem Version](https://badge.fury.io/rb/rails_db.svg)](https://badge.fury.io/rb/rails_db)
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/main_view.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXeu9-vtuW8nIvc9RE0nOIhGbwxkbks5WKlTLwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
+# Xplore
+At first I would like to thank **_Igor Kasyanchuk (Original Author)_** for this beautiful gem. 
 
 
-Quick way to inspect your Rails database **http://localhost:12345/rails/db**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
+Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact at my email irfandhk@gmail or to the original author igorkasyanchuk@gmail.com .
+
+Quick way to inspect your Rails database **http://localhost:12345/rails/xplore**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
 Demo available on: https://rails-db.herokuapp.com/rails/db/
 
@@ -24,11 +15,6 @@ Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 Version `>2.0` 100% works with Ruby 2.3+, and Rails 5+. As for other versions of RoR use 1.6 version of gem. Also there are automated tests running on Travis CI.
 Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem is using ActiveRecord it will work with others DBs.
 
-For older versions of Rails please user `gem "rails_db", "1.6"`.
-
-## Note (!)
-
-Gem works with ruby 1.9.3 but you need to use kaminari < 1.0.0 gem and rails_db <= 1.6. Please add to gemfile `gem 'kaminari', '< 1.0.0'`.
 
 ## Main Features
 
@@ -64,20 +50,20 @@ Add this to the development group in your `Gemfile`
 For all environments (be careful with production environment):
 
 ```ruby
-  gem 'rails_db', '2.0.2'
+  gem 'xplore', '0.0.1'
 ```
 
 Or only for development:
 
 ```ruby
   group :development do
-    gem 'rails_db', '2.0.2'
+    gem 'xplore', '0.0.0'
   end
 ```
 
 Run `bundle install`
 
-Visit **`http://localhost:3000/rails/db`** and you will see your database tables and SQL editors.
+Visit **`http://localhost:3000/rails/xplore`** and you will see your database tables and SQL editors.
 > Use port 12345 if running in 'standalone' mode
 
 Optionally, add `gem 'axlsx_rails'` to your application's Gemfile to be able to export to excel `.xlsx` files.
@@ -103,7 +89,7 @@ If will create file config/initializers/rails_db.rb.
 If you want to add routes manually (or customize the mounted location) you need to first turn off automatic_routes_mount and then add to your `routes.rb`
 
 ```ruby
-  mount RailsDb::Engine => '/rails/db', :as => 'rails_db'
+  mount RailsDb::Engine => '/rails/xplore', :as => 'xplore'
 ```
 
 If you wanted to only allow access to admins and, for example, you are using Devise you could do following (in `config/initializers/rails_db.rb`)

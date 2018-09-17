@@ -3,12 +3,12 @@ $:.push File.expand_path("../lib", __FILE__)
 require "rails_db/version"
 
 Gem::Specification.new do |s|
-  s.name        = "rails_db"
+  s.name        = "xplore"
   s.version     = RailsDb::VERSION
-  s.authors     = ["Igor Kasyanchuk"]
-  s.email       = ["igorkasyanchuk@gmail.com"]
+  s.authors     = ["Igor Kasyanchuk", "Irfan Ahmed"]
+  s.email       = ["igorkasyanchuk@gmail.com", "irfandhk@gmail.com"]
   s.homepage    = "https://github.com/igorkasyanchuk/rails_db"
-  s.summary     = "Inspect your Rails DB (table content viewer, execute sql queries, export & import data"
+  s.summary     = "Inspect and explore your data witht his easy, handy system."
   s.description = "Quick way to inspect your Rails database, see content of tables, filter, export them to CSV, Excel, EXPLAIN SQL and run SQL queries."
   s.license     = "MIT"
 
@@ -33,7 +33,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mime-types', '< 3.0'
   s.add_development_dependency 'paranoia'
   s.add_development_dependency 'pry-rails'
-  # s.add_development_dependency 'populator'
-  # s.add_development_dependency 'faker'
-  # s.add_development_dependency 'pry'
 end
