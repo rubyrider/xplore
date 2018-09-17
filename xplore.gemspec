@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,lib,test}/**/*", "rails_db.gemspec", "Gemfile", "Gemfile.lock", "MIT-LICENSE", "Rakefile", "README.rdoc", "bin/rails_db", "bin/railsdb", "bin/runsql"]
   s.test_files = Dir["test/**/*"]
 
-  s.executables   = ["railsdb", "rails_db", 'runsql']
+  s.executables   = ["railsdb", "rails_db", "xplore", 'runsql']
 
   s.add_dependency 'rails', ">= 5.0.0"
   s.add_dependency 'codemirror-rails'
