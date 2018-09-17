@@ -1,4 +1,4 @@
-module RailsDb
+module Xplore
   class Engine < ::Rails::Engine
     isolate_namespace RailsDb
     config.autoload_paths += Dir["#{config.root}/lib"]
@@ -14,5 +14,3 @@ module RailsDb
     end
   end
 end
-
-Xplore::Engine = RailsDb::Engine
