@@ -6,8 +6,6 @@ require 'simple_form'
 require 'ransack'
 require 'kaminari'
 
-Object.send(:remove_const, :Terminal) if Object.constants.include?(:Terminal)
-
 module RailsDb
   # Custom require relative that work with older rubies also
   # def self.require_relative(path)
@@ -37,7 +35,7 @@ module RailsDb
 
   # Enable http basic authentication
   mattr_accessor :http_basic_authentication_user_name
-  @@http_basic_authentication_user_name = 'rails_db'
+  @@http_basic_authentication_user_name = 'xplore'
 
   # Enable http basic authentication
   mattr_accessor :http_basic_authentication_password
@@ -66,3 +64,5 @@ require_relative "rails_db/engine"
 require_relative "rails/routes"
 require_relative "ext/simple_form_ext"
 require_relative "ext/ransack_ext"
+
+Xplore = RailsDb

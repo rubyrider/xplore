@@ -1,23 +1,16 @@
 # Xplore
-At first I would like to thank **_Igor Kasyanchuk (Original Author)_** for this beautiful gem. 
-
-
-Please **share** this gem with your friends to get more feedback. I would really appreciate for the gem review if you have a  blog. If you have ideas - please create an issue or contact at my email irfandhk@gmail or to the original author igorkasyanchuk@gmail.com .
+At first I would like to thank the original author **_Igor Kasyanchuk (Original Author)_** for this beautiful gem. 
 
 Quick way to inspect your Rails database **http://localhost:12345/rails/xplore**, see content of tables, export them to CSV, EXPLAIN SQL and run SQL queries.
 
-Demo available on: https://rails-db.herokuapp.com/rails/db/
-
-Video Demos: https://youtu.be/TYsRxXRFp1g, https://youtu.be/dfViQPZw9zE
 
 ## Requirements
 
-Version `>2.0` 100% works with Ruby 2.3+, and Rails 5+. As for other versions of RoR use 1.6 version of gem. Also there are automated tests running on Travis CI.
+There are automated tests running on Travis CI.
 Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem is using ActiveRecord it will work with others DBs.
 
 
 ## Main Features
-
 * command line tools `railsdb` and `runsql` to run app and sql for your apps.
 * view content and schema of DB tables (including indexes)
 * create, edit content
@@ -34,7 +27,7 @@ Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem i
 * expand/collapse sidebar
 * hide/show columns
 * allow access for current user for example with appropriate role
-* added HTTP_BASIC auth for Rails DB
+* added HTTP_BASIC auth for xPlore
 * ability to turn on/off using initializer
 * white/black list of tables
 * data-tables inside your app
@@ -72,9 +65,9 @@ Optionally, add `gem 'axlsx_rails'` to your application's Gemfile to be able to 
 
 If you want to customize gem (create initializer) run in console:
 
-    rails g rails_db initializer
+    rails g xplore initializer
 
-If will create file config/initializers/rails_db.rb.
+If will create file config/initializers/xplore.rb.
 
 ### Options
 *   **enabled** - enable or disable gem (default: true).
@@ -89,7 +82,7 @@ If will create file config/initializers/rails_db.rb.
 If you want to add routes manually (or customize the mounted location) you need to first turn off automatic_routes_mount and then add to your `routes.rb`
 
 ```ruby
-  mount RailsDb::Engine => '/rails/xplore', :as => 'xplore'
+  mount Xplore::Engine => '/rails/xplore', :as => 'xplore'
 ```
 
 If you wanted to only allow access to admins and, for example, you are using Devise you could do following (in `config/initializers/rails_db.rb`)
@@ -122,53 +115,6 @@ Below you can see samples on how you can embed data-tables directly in your app.
                             header: true %>
 ```
 
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/data_table_code.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-## Samples & Screenshots
-
-### Schema
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/autocomplete.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/accounts_schema.png?token=AAArXU_ChN3xNN2MajLy2Tv98ij6XK4Pks5WKlT3wA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-### SQL Editor
-
-Rails App SQL editor with syntax highlight and code complete.
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/execute_sql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-Install & visit **`http://localhost:3000/rails/db`** to see it in action.
-
-### RailsDB Standalone
-
-Run RailsDB Standalone commands locally withing configuration of your `config/database.yml`.
-
-RailsDB Standalone and runsql doesn't require to be added to Gemfile or you application.
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/railsdb.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-### RunSQL Util
-
-Run SQL commands locally withing configuration of your `config/database.yml`
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/runsql.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://rails-db.herokuapp.com/rails/db/)
-
-### Edit Content in Rails DB
-
-[<img src="https://raw.githubusercontent.com/igorkasyanchuk/rails_db/master/docs/edit_popup.png?token=AAArXf26vwsPwvV2MhgxWUepGb0tT6g4ks5WKlUJwA%3D%3D"
-/>](https://youtu.be/TYsRxXRFp1g)
-
-
-===
-
 <sup>++</sup>There is a dependency on MySQL.  You may need to `gem install mysql2 -v '0.3.20'`
 ## Contributing
 
@@ -186,30 +132,6 @@ Run SQL commands locally withing configuration of your `config/database.yml`
 - rake db:migrate
 - rails s -b 0.0.0.0
 - open http://locahost:3000/
-
-## Local Build
-
-- in gem root folder run `gem build rails_db.gemspec`
-- then try to install local version of the gem `gem install rails_db-0.X.X.gem`
-- now you can use this gem locally
-- don't forget to uninstall it
-
-
-## Run Tests
-
-To run tests locally you need to execute `rake test` withing root folder of project.
-
-After your push to git, all tests will be executed on Travis CI environment.
-
-You can also change locally DB to verify gem accross multiple Databases (mysql, postgres, sqlite). For more details see `test/dummy/config/database.yml` (you need to set DB ENV variable).
-
-## Common Issues and Solutions
-
-- "Invalid css error" - https://github.com/igorkasyanchuk/rails_db/issues/11
-- "Automatic routes mounting" - https://github.com/igorkasyanchuk/rails_db/issues/4
-- gems(mysql, pg) are not found - RailsDB doesn't have any strict dependency inside. So you need to install gems manually `gem install pg` or `gem install mysql -v=0.3.18`.
-- "ActionView::Template::Error (No input found for `jsonb`):" - https://github.com/igorkasyanchuk/rails_db/issues/39
-- issue with Ransack gem (in rails_db `search` method is removed), try to use method `ransack` instead because `search` is deprectated.
 
 ## Plans
 

@@ -1,5 +1,5 @@
-if Object.const_defined?('RailsDb')
-  RailsDb.setup do |config|
+if Object.const_defined?('Xplore')
+  Xplore.setup do |config|
     # # enabled or not
     # config.enabled = Rails.env.development?
 
