@@ -14,3 +14,5 @@ module RailsDb
     end
   end
 end
+
+Xplore::Engine = RailsDb::Xplore
