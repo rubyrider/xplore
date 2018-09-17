@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/rubyrider/terminal-table.git
-  revision: 8882e1ad9d9ab96507ba819849f4768e5b2a01c6
+  revision: 6f719ecf4a69c336b23884cdbc8d4a5c0ead928c
   specs:
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)

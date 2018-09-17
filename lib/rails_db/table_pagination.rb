@@ -26,6 +26,5 @@ module RailsDb
     def total_pages
       total_entries.zero? ? 1 : (total_entries / per_page.to_f).ceil
     end
-
   end
 end
