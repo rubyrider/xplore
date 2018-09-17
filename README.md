@@ -11,7 +11,7 @@ Supports: PostgresSQL, MySQL, SQLite. Not sure about other adapters. Since gem i
 
 
 ## Main Features
-* command line tools `railsdb` and `runsql` to run app and sql for your apps.
+* command line tools `xplore` and `runsql` to run app and sql for your apps.
 * view content and schema of DB tables (including indexes)
 * create, edit content
 * sort content of DB tables
@@ -85,7 +85,7 @@ If you want to add routes manually (or customize the mounted location) you need 
   mount Xplore::Engine => '/rails/xplore', :as => 'xplore'
 ```
 
-If you wanted to only allow access to admins and, for example, you are using Devise you could do following (in `config/initializers/rails_db.rb`)
+If you wanted to only allow access to admins and, for example, you are using Devise you could do following (in `config/initializers/xplore.rb`)
 
 ```ruby
   config.verify_access_proc = proc { |controller| controller.current_user.admin? }
