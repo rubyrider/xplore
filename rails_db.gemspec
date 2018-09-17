@@ -4,7 +4,7 @@ require "rails_db/version"
 
 Gem::Specification.new do |s|
   s.name        = "xplore"
-  s.version     = RailsDb::VERSION
+  s.version     = RailsDb::VERSION::STRING
   s.authors     = ["Igor Kasyanchuk", "Irfan Ahmed"]
   s.email       = ["igorkasyanchuk@gmail.com", "irfandhk@gmail.com"]
   s.homepage    = "https://github.com/igorkasyanchuk/rails_db"
